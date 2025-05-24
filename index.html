@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support - Online Customer Account App</title>
+  <style>
+    :root {
+      --bg-color-light: #ffffff;
+      --text-color-light: #000000;
+      --link-color-light: #0066cc;
+
+      --bg-color-dark: #121212;
+      --text-color-dark: #ffffff;
+      --link-color-dark: #66b2ff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    select {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--link-color-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-color-dark);
+        color: var(--text-color-dark);
+      }
+
+      a {
+        color: var(--link-color-dark);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p, a {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <select id="langSelect">
+    <option value="en">English</option>
+    <option value="tr">Türkçe</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="ar">العربية</option>
+    <option value="zh">中文</option>
+    <option value="es">Español</option>
+  </select>
+
+  <div id="content"></div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Support",
+        desc1: "If you have any questions or need assistance, feel free to contact us.",
+        email: "Email",
+        desc2: "We will get back to you as soon as possible."
+      },
+      tr: {
+        title: "Destek",
+        desc1: "Herhangi bir sorunuz veya yardım talebiniz için bizimle iletişime geçebilirsiniz.",
+        email: "E-posta",
+        desc2: "En kısa sürede size geri dönüş yapacağız."
+      },
+      de: {
+        title: "Unterstützung",
+        desc1: "Wenn Sie Fragen haben oder Hilfe benötigen, kontaktieren Sie uns bitte.",
+        email: "E-Mail",
+        desc2: "Wir werden uns so schnell wie möglich bei Ihnen melden."
+      },
+      fr: {
+        title: "Assistance",
+        desc1: "Si vous avez des questions ou avez besoin d'aide, n'hésitez pas à nous contacter.",
+        email: "E-mail",
+        desc2: "Nous vous répondrons dans les plus brefs délais."
+      },
+      ar: {
+        title: "الدعم",
+        desc1: "إذا كان لديك أي أسئلة أو تحتاج إلى مساعدة، فلا تتردد في الاتصال بنا.",
+        email: "البريد الإلكتروني",
+        desc2: "سوف نرد عليك في أقرب وقت ممكن."
+      },
+      zh: {
+        title: "支持",
+        desc1: "如果您有任何问题或需要帮助，请随时与我们联系。",
+        email: "电子邮件",
+        desc2: "我们会尽快与您联系。"
+      },
+      es: {
+        title: "Soporte",
+        desc1: "Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.",
+        email: "Correo electrónico",
+        desc2: "Te responderemos lo antes posible."
+      }
+    };
+
+    const contentEl = document.getElementById("content");
+    const langSelect = document.getElementById("langSelect");
+
+    function render(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      contentEl.innerHTML = `
+        <h1>${t.title}</h1>
+        <p>${t.desc1}</p>
+        <p><strong>${t.email}:</strong> <a href="mailto:destek@mobil16.com">destek@mobil16.com</a></p>
+        <p>${t.desc2}</p>
+      `;
+    }
+
+    langSelect.addEventListener("change", () => {
+      render(langSelect.value);
+    });
+
+    // Set default language to English
+    render("en");
+  </script>
+</body>
+</html>
