@@ -1,3 +1,3 @@
-- [Ana Sayfa (index.html)](https://huseyinozkan.github.io/Mobil16Pages/index.html)
+- [Mobil16 Destek](https://huseyinozkan.github.io/Mobil16Pages/index.html)
 - [Cari Hesap Gizlilik Politikası](https://huseyinozkan.github.io/Mobil16Pages/cari_privacy_policy.html)
 - [Veresiye Defteri Gizlilik Politikası](https://huseyinozkan.github.io/Mobil16Pages/veresiye_privacy_policy.html)
